@@ -1,0 +1,76 @@
+.cart-items h1 {
+    font-size: 20px;
+    margin-bottom: 2em;
+}
+
+.price-details span {
+    width: 50%;
+    float: left;
+    font-size: 13px;
+    color: #000;
+    line-height: 1.8em;
+}
+
+h4 {
+    font-size: 19px;
+    line-height: 1.25;
+    margin-bottom: 1.25em;
+}
+
+a, a:link, a:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+ul.qty li p {
+    font-size: 10px;
+    color: #555;
+}
+
+form input[type=submit].order{
+    background:#6FC9EB;
+    padding: 16px 60px 16px 60px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-weight: 600;
+    text-align: center;
+    margin:3em 0;
+    border-radius:0% ;
+    font-size: 18px;
+    border-color: inherit;
+    font-family: 'Dosis', sans-serif;
+    text-shadow: none;
+
+}
+form input[type=submit].order:hover{
+    background:#ed645c;
+}
+
+.cart.box_1 a {
+    color: #333;
+    font-size: 16px;
+}
+
+.simpleCart_total{
+    font-size: 16px;
+}
+
+form input[type=submit].empty_cart{
+    background:#ed645c;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-weight: 600;
+    text-align: center;
+    border-radius:0% ;
+    font-size: 15px;
+    border-color: inherit;
+    padding: 5px 5px 5px 5px ;
+    text-shadow: none;
+}
+
+form input[type=submit].empty_cart:hover{
+    background:#6FC9EB;
+}

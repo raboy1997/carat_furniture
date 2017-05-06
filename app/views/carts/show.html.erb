@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="check-sec">
+    <div class="col-md-3 cart-total">
+      <%= link_to 'Continue to basket', products_path, :class =>"continue" %>
+      <div class="price-details">
+        <h3>Price Details</h3>
+        <span class="total1"></span>
+        <% @cart.line_items.each do |item| %>
+            <span><%= item.product.name %></span>
+            <span class="total1"><%= item.product.price %> &times; <%= item.quantity %></span>
+        <% end %>
+        <div class="clearfix"></div>
+      </div>
+      <ul class="total_price">
+        <li class="last_price"> <h4>TOTAL</h4></li>
+        <li class="last_price"><span>₴ <%=@cart.total_price %></span></li>
+      </ul>
+      <div class="clearfix"></div>
+      <div class="clearfix"></div>
+      <%= button_to "Сделать заказ", new_order_path, method: :get, :class => 'order'%>
+    </div>
+    <div class="col-md-9 cart-items">
+      <h1>My Shopping Bag</h1>
+      <% @cart.line_items.each do |item| %>
+
+
+          <div class="cart-header">
+        <div class="cart-sec simpleCart_shelfItem">
+          <div class="cart-item cyc">
+            <%= image_tag item.product.p_img, :class => "img-responsive" %>
+          </div>
+          <div class="cart-item-info">
+            <h3><%= link_to item.product.name, product_path(item[:id]), :class =>'item_name' %></h3>
+            <ul class="qty">
+              <li><p>Описание: <%= item.product.description %></p></li>
+              <li><p>Количество : <%= item.quantity %> шт</p></li>
+            </ul>
+          </div>
+          <div class="clearfix"></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"> </div>
+  </div>
+</div>

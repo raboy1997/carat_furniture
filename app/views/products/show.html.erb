@@ -1,0 +1,28 @@
+<div class="product">
+  <div class="container">
+    <div class="product-price1">
+      <div class="top-sing">
+        <div class="col-md-7 single-top">
+          <%= image_tag @product.p_img , size: '295x345'%>
+        </div>
+        <div class="col-md-5 single-top-in simpleCart_shelfItem">
+          <div class="single-para ">
+            <h4><%= @product.name%></h4>
+            <h5 class="item_price">₴ <%= @product.price%></h5>
+            <p class="para"><%= @product.description%></p>
+            <div class="prdt-info-grid">
+              <ul>
+                <li>- Dimensions : <%= @product.dimensions%></li>
+                <li>- Color : <%= @product.color%></li>
+                <li>- Material :<%= @product.materials%></li>
+              </ul>
+            </div>
+            <%= button_to 'ADD TO CART', line_items_path(product_id: @product), :type => "button",  :class =>"add-cart item_add" %>
+          </div>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

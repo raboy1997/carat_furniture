@@ -1,0 +1,17 @@
+<div class="header-top">
+  <div class="header-bottom">
+    <div class="logo">
+      <h1><a href="index.html" class="abcd">Карат мебель</a></h1>
+    </div>
+    <!---->
+    <div class="top-nav">
+      <ul class="memenu skyblue"><li><%=link_to 'Главная', root_path %></li>
+        <li class="grid"><%= link_to 'Товары', products_path %>
+      </ul>
+    </div>
+    <!---->
+    <%= render @cart%>
+    <!---->
+  </div>
+  <div class="clearfix"> </div>
+</div>

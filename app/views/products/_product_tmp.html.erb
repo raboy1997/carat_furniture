@@ -1,0 +1,100 @@
+<div class="product-model">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><%=link_to 'Главная', root_path %></li>
+      <li class="active"><%= link_to 'Товары', products_path %>
+    </ol>
+    <h2>Our Products</h2>
+
+    <div class="col-md-9 product-model-sec">
+      <% @products.each do |item| %>
+          <div class="product-grid">
+            <div class="more-product"><span> </span></div>
+            <div class="product-img -animate-go  thickbox">
+              <%= link_to (image_tag item.p_img , :class => "img-responsive" , size: '222x222'),product_path(item[:id])  %>
+            </div>
+          <div class="product-info simpleCart_shelfItem">
+            <div class="product-info-cust prt_name">
+              <h4><%=link_to  item.name, product_path(item[:id]), :class =>'item_name' %></h4>
+              <span class="item_price" >₴ <%= item.price %></span>
+              <%= button_to 'Add', line_items_path(product_id: item), :type => "button",  :class =>"item_add items" %>
+            </div>
+          </div>
+          </div>
+      <% end %>
+      </div>
+  <div class="rsidebar span_1_of_left">
+    <section  class="sky-form">
+      <div class="product_right">
+        <h4 class="m_2"><span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Categories</h4>
+        <div class="tab1">
+          <%@categories.each do |category|  %>
+              <ul class="place">
+                <li class="sort"><%= link_to category.name,   show_products_category_path(category: category.name) %></li>
+                <div class="clearfix"> </div>
+              </ul>
+              </div>
+          <% end %>
+    </section>
+  </div>
+</div>
+</div>
+</div>
+<div class="subscribe">
+  <div class="container">
+    <h3>Newsletter</h3>
+    <%= form_tag products_search_path, :method => 'get' do %>
+        <%= text_field_tag :search, params[:search]%>
+        <%= select_tag :category, options_for_select(Category.all.map{|c| [c.name, c.id]}) %>
+        <%= submit_tag 'Search' %>
+    <% end %>
+  </div>
+</div>
+
+<!---->
+<div class="footer">
+  <div class="container">
+    <div class="footer-grids">
+      <div class="col-md-3 about-us">
+        <h3>About Us</h3>
+        <p>Maecenas nec auctor sem. Vivamus porttitor tincidunt elementum nisi a, euismod rhoncus urna. Curabitur scelerisque vulputate arcu eu pulvinar. Fusce vel neque diam</p>
+      </div>
+      <div class="col-md-3 ftr-grid">
+        <h3>Information</h3>
+        <ul class="nav-bottom">
+          <li><a href="#">Track Order</a></li>
+          <li><a href="#">New Products</a></li>
+          <li><a href="#">Location</a></li>
+          <li><a href="#">Our Stores</a></li>
+          <li><a href="#">Best Sellers</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3 ftr-grid">
+      </div>
+      <div class="col-md-3 ftr-grid">
+        <h3>Categories</h3>
+        <ul class="nav-bottom">
+          <% @kind.each do |kind| %>
+              <li><%= link_to kind.name %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+<div class="copywrite">
+  <div class="container">
+    <div class="copy">
+      <p> 2017 <a href="#" target=""></a> </p>
+    </div>
+    <div class="social">
+      <a href="#"><i class="facebook"></i></a>
+      <a href="#"><i class="twitter"></i></a>
+      <a href="#"><i class="dribble"></i></a>
+      <a href="#"><i class="google"></i></a>
+      <a href="#"><i class="youtube"></i></a>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

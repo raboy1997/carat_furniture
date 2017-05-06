@@ -1,0 +1,11 @@
+
+<div class="cart box_1">
+  <div class="total">
+    <span class="simpleCart_total">₴ <%= link_to (@cart.total_price ) , cart_path(cart[:id])%></span>
+  </div>
+  <span><%=image_tag("34627.png", size: "16x20") %></span>
+
+  <%= button_to 'Очистить корзину', cart, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'empty_cart' %>
+  <div class="clearfix"> </div>
+</div>
+<div class="clearfix"> </div>
