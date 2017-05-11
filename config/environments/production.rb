@@ -95,4 +95,15 @@ Rails.application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address: 'smtp.gmail.com',
+      port: '587',
+      enable_starttls_auto: true,
+      user_name: 'rublyanukr2008',
+      password: ENV['GOO_PASSWORD'],
+      authentication: :plain,
+      domain: "carat-forniture.herokuapp.com"
+  }
 end
