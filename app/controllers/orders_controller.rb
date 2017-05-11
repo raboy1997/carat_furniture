@@ -38,15 +38,13 @@ class OrdersController < ApplicationController
       Cart.destroy(session[:cart_id])
       session[:cart_id] = nil
       OrderNotifierMailer.received(@order).deliver
+      AdminMailer.received(@order).deliver
       format.html { redirect_to products_path, notice:
-          'Thank you for your order.' }
+          'Спасибо за ваш заказ, мы свяжемся с вами в ближайшее время' }
       format.json { render action: 'show', status: :created,
                            location: @order }
     else
-      @cart = current_cart
-      format.html { render action: 'new' }
-      format.json { render json: @order.errors,
-                           status: :unprocessable_entity }
+      format.html { render action: 'new', flash[:notice] => "Заполните поля: ФИО, Адрес, email и телефон" }
     end
   end
   end

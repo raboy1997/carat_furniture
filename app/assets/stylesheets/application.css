@@ -18,6 +18,15 @@
  *= require_self
  */
 .memenu>li>a{
-    text-transform: capitalize;
+
     font-size: 30px;
+}
+
+a {
+    text-transform: lowercase;
+}
+#p_notice{
+    text-transform: lowercase;
+    margin-left: 33%;
+
 }

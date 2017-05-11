@@ -15,7 +15,8 @@
 
             <div class="arrival-info">
               <h4><%= item.name %></h4>
-              <span class="pric1"><%= item.price %></span>
+              <span class="pric1">₴ <%= item.price %></span>
+              <%= button_to 'Add', line_items_path(product_id: item), :type => "button",  :class =>"item_add items" %>
             </div>
           </div>
       <% end %>
@@ -28,29 +29,33 @@
   <div class="container">
     <h3>о компании</h3>
     <div class="offer-grids">
-      <div class="col-md-6 grid-left">
+      <div class="col-md-12 grid-left">
         <a href="#"><div class="offer-grid1">
           <div class="ofr-pic">
             <%= image_tag ("ofr2.jpeg") , :class => "img-responsive" %>
           </div>
           <div class="ofr-pic-info">
-            <h4>Emergency Lights <br>& Led Bulds</h4>
-            <span>UP TO 60% OFF</span>
-            <p>Shop Now</p>
-          </div>
-          <div class="clearfix"></div>
-        </div></a>
-      </div>
-      <div class="col-md-6 grid-right">
-        <a href="#"><div class="offer-grid2">
-          <div class="ofr-pic-info2">
-            <h4>Flat Discount</h4>
-            <span>UP TO 30% OFF</span>
-            <h5>Outdoor Gate Lights</h5>
-            <p>Shop Now</p>
-          </div>
-          <div class="ofr-pic2">
-            <%= image_tag ("ofr3.jpg"), :class => "img-responsive" %>
+            Что такое Lorem Ipsum?
+            Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
+            Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.
+            В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов,
+            используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без
+            заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации
+            в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и,
+            в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых
+            используется Lorem Ipsum.
+
+            Почему он используется?
+            Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться.
+            Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона,
+            а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации
+            "Здесь ваш текст.. Здесь ваш текст.. Здесь ваш текст.." Многие программы электронной вёрстки и
+            редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым
+            словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего
+            рождения. За прошедшие годы текст Lorem Ipsum получил много версий. Некоторые версии появились по
+            ошибке, некоторые - намеренно (например, юмористические варианты).
+
+
           </div>
           <div class="clearfix"></div>
         </div></a>
@@ -65,56 +70,26 @@
   <div class="container">
     <div class="footer-grids">
       <div class="col-md-3 about-us">
-        <h3>About Us</h3>
+        <h3>О нас</h3>
         <p>Maecenas nec auctor sem. Vivamus porttitor tincidunt elementum nisi a, euismod rhoncus urna. Curabitur scelerisque vulputate arcu eu pulvinar. Fusce vel neque diam</p>
       </div>
       <div class="col-md-3 ftr-grid">
-        <h3>Information</h3>
+        <h3>Контакты</h3>
         <ul class="nav-bottom">
-          <li><a href="#">Track Order</a></li>
-          <li><a href="#">New Products</a></li>
-          <li><a href="#">Location</a></li>
-          <li><a href="#">Our Stores</a></li>
-          <li><a href="#">Best Sellers</a></li>
+          <li>+380 (63) 324 70 40</li>
+          <li class="email">rublyanukr2008@gmail.com</li>
         </ul>
       </div>
+
       <div class="col-md-3 ftr-grid">
-        <h3>More Info</h3>
+        <h3>Категории</h3>
         <ul class="nav-bottom">
-          <li><a href="login.html">Login</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="#">Shipping</a></li>
-          <li><a href="#">Membership</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3 ftr-grid">
-        <h3>Categories</h3>
-        <ul class="nav-bottom">
-          <li><a href="#">Car Lights</a></li>
-          <li><a href="#">LED Lights</a></li>
-          <li><a href="#">Decorates</a></li>
-          <li><a href="#">Wall Lights</a></li>
-          <li><a href="#">Protectors</a></li>
+          <% @kind.each do |kind| %>
+              <li><%= link_to kind.name, show_products_category_path(category: kind.name)  %></li>
+          <% end %>
         </ul>
       </div>
       <div class="clearfix"></div>
     </div>
   </div>
 </div>
-<div class="copywrite">
-  <div class="container">
-    <div class="copy">
-      <p> 2017 <a href="#" target=""></a> </p>
-    </div>
-    <div class="social">
-      <a href="#"><i class="facebook"></i></a>
-      <a href="#"><i class="twitter"></i></a>
-      <a href="#"><i class="dribble"></i></a>
-      <a href="#"><i class="google"></i></a>
-      <a href="#"><i class="youtube"></i></a>
-    </div>
-    <div class="clearfix"></div>
-  </div>
-</div>
-

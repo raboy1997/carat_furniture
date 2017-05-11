@@ -21,7 +21,7 @@ gem "paperclip", "~> 5.0.0"
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'kaminari'
-
+gem 'rails_real_favicon'
 
 
 group :development, :test do

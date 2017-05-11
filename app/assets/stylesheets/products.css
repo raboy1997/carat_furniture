@@ -155,3 +155,11 @@ span.pric1 {
     font-size: 15px;
     font-weight: 300;
 }
+
+.email{
+    text-transform: lowercase;
+}
+
+.subscribe form input[type="submit"] {
+    text-shadow: none;
+}
