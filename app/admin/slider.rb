@@ -2,21 +2,21 @@ ActiveAdmin.register Slider do
 
   controller do
     def permitted_params
-      params.permit slider: [ :s_img ]
+      params.permit slider: [ :sliders_img ]
     end
   end
 
   form do |f|
     f.inputs "Додавання фото до слайдера на головній сторінці" do
-      f.input :s_img, lable: "Фото" , :as => :file, :hint => f.template.image_tag(f.object.s_img.url(:thumb))
+      f.input :sliders_img, lable: "Фото" , :hint => f.template.image_tag(f.object.sliders_img_url)
     end
     f.actions
   end
 
   show do |ad|
     attributes_table do
-      row  :s_img  do
-        image_tag(ad.s_img.url(:thumb))
+      row  :sliders_img  do
+        image_tag(ad.sliders_img_url)
       end
 
     end

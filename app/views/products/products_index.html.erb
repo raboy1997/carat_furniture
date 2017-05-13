@@ -1,6 +1,6 @@
 <ul class="bxslider">
   <%= @sliders.each do |img|%>
-      <%=image_tag img.s_img %>
+      <%=image_tag img.sliders_img_url %>
   <%end%>
 </ul>
 <div class="items">
@@ -11,7 +11,7 @@
     <div class="items-sec">
       <% @products.each do |item| %>
           <div class="col-md-3 feature-grid">
-            <%= link_to (image_tag item.p_img , :class => "img-responsive" , size: '222x222'),product_path(item[:id])  %>
+            <%= link_to (image_tag item.product_img_url , :class => "img-responsive" , size: '222x222'),product_path(item[:id])  %>
 
             <div class="arrival-info">
               <h4><%= item.name %></h4>
@@ -31,9 +31,7 @@
     <div class="offer-grids">
       <div class="col-md-12 grid-left">
         <a href="#"><div class="offer-grid1">
-          <div class="ofr-pic">
-            <%= image_tag ("ofr2.jpeg") , :class => "img-responsive" %>
-          </div>
+
           <div class="ofr-pic-info">
             Что такое Lorem Ipsum?
             Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.

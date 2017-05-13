@@ -17,11 +17,12 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'bxslider-rails'
-gem "paperclip", "~> 5.0.0"
+gem 'carrierwave', '~> 1.0'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'kaminari'
 gem 'rails_real_favicon'
+gem 'cloudinary'
 
 
 group :development, :test do

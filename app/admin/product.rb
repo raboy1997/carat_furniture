@@ -9,12 +9,13 @@ ActiveAdmin.register Product do
     column :category
     column :created_at
     column :updated_at
-
+    actions do |product|
+    end
 
   end
   controller do
     def permitted_params
-      params.permit product: [ :name, :description, :price, :color, :dimensions, :materials, :category_id, :p_img ]
+      params.permit product: [ :name, :description, :price, :color, :dimensions, :materials, :category_id, :product_img ]
     end
   end
 
@@ -27,7 +28,7 @@ ActiveAdmin.register Product do
       f.input :color
       f.input :dimensions, :input_html => {:style => 'width:35%' }
       f.input :materials, :input_html => {:style => 'width:50%'}
-      f.input :p_img, lable: "Фото" , :as => :file, :hint => f.template.image_tag(f.object.p_img.url(:thumb))
+      f.input :product_img, lable: "Фото" , :as => :file, :hint => f.template.image_tag(f.object.product_img_url)
     end
     f.actions
   end
@@ -40,8 +41,8 @@ ActiveAdmin.register Product do
       row :color
       row :dimensions
       row :materials
-      row  :p_img  do
-        image_tag(ad.p_img.url(:thumb))
+      row  :product_img  do
+        image_tag(ad.product_img_url)
       end
     end
   end

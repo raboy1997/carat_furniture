@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hnghuythx
+  api_key: '925266634212884'
+  api_secret: s0FrSLfA5vOk6n9wrDU7jyZPeL0
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hnghuythx
+  api_key: '925266634212884'
+  api_secret: s0FrSLfA5vOk6n9wrDU7jyZPeL0
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hnghuythx
+  api_key: '925266634212884'
+  api_secret: s0FrSLfA5vOk6n9wrDU7jyZPeL0
+  enhance_image_tag: true
+  static_image_support: false
