@@ -28,7 +28,7 @@ ActiveAdmin.register Product do
       f.input :color
       f.input :dimensions, :input_html => {:style => 'width:35%' }
       f.input :materials, :input_html => {:style => 'width:50%'}
-      f.input :product_img, lable: "Фото" , :as => :file, :hint => f.template.image_tag(f.object.product_img_url)
+      f.input :product_img, lable: "Фото" , :as => :file, :hint => f.template.image_tag(f.object.product_img_cache)
     end
     f.actions
   end
@@ -42,7 +42,7 @@ ActiveAdmin.register Product do
       row :dimensions
       row :materials
       row  :product_img  do
-        image_tag(ad.product_img_url)
+        image_tag(ad.product_img_cache)
       end
     end
   end

@@ -3,6 +3,8 @@
   Это сообщение уведомляет Вас, вы получили заказ:
 </p>
 <table>
+
+  номер мобильно заказчика: <%= @order.phone %>
   <tr><th colspan="2">К-во/имя</th><th>цена</th></tr>
   <%= render @order.line_items -%>
 </table>
